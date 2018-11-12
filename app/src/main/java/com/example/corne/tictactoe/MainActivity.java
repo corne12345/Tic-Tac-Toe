@@ -15,7 +15,41 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        game = new Game();
+        if (savedInstanceState == null){
+            game = new Game();
+        }
+        else{
+            game = (Game) savedInstanceState.getSerializable("gameState");
+
+            String state_tile = (String) savedInstanceState.getSerializable("button1");
+            TextView text_tile = findViewById(R.id.button1);
+            text_tile.setText(state_tile);
+            state_tile = (String) savedInstanceState.getSerializable("button2");
+            text_tile = findViewById(R.id.button2);
+            text_tile.setText(state_tile);
+            state_tile = (String) savedInstanceState.getSerializable("button3");
+            text_tile = findViewById(R.id.button3);
+            text_tile.setText(state_tile);
+            state_tile = (String) savedInstanceState.getSerializable("button4");
+            text_tile = findViewById(R.id.button4);
+            text_tile.setText(state_tile);
+            state_tile = (String) savedInstanceState.getSerializable("button5");
+            text_tile = findViewById(R.id.button5);
+            text_tile.setText(state_tile);
+            state_tile = (String) savedInstanceState.getSerializable("button6");
+            text_tile = findViewById(R.id.button6);
+            text_tile.setText(state_tile);
+            state_tile = (String) savedInstanceState.getSerializable("button7");
+            text_tile = findViewById(R.id.button7);
+            text_tile.setText(state_tile);
+            state_tile = (String) savedInstanceState.getSerializable("button8");
+            text_tile = findViewById(R.id.button8);
+            text_tile.setText(state_tile);
+            state_tile = (String) savedInstanceState.getSerializable("button9");
+            text_tile = findViewById(R.id.button9);
+            text_tile.setText(state_tile);
+        }
+
     }
 
     // Reset the game when the reset button is pressed
@@ -80,13 +114,61 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         GameState check = game.won();
-        if (check == GameState.PLAYER_ONE) {
-            TextView button = findViewById(id);
-            button.setText("1 WON");
-        }
-        else if (check == GameState.PLAYER_TWO) {
-            TextView button = findViewById(id);
-            button.setText("2 WON");
+        
+        if (check == GameState.PLAYER_ONE || check == GameState.PLAYER_TWO){
+            Button button1 = findViewById(R.id.button1);
+            button1.setEnabled(false);
+            Button button2 = findViewById(R.id.button2);
+            button2.setEnabled(false);
+            Button button3 = findViewById(R.id.button3);
+            button3.setEnabled(false);
+            Button button4 = findViewById(R.id.button4);
+            button4.setEnabled(false);
+            Button button5 = findViewById(R.id.button5);
+            button5.setEnabled(false);
+            Button button6 = findViewById(R.id.button6);
+            button6.setEnabled(false);
+            Button button7 = findViewById(R.id.button7);
+            button7.setEnabled(false);
+            Button button8 = findViewById(R.id.button8);
+            button8.setEnabled(false);
+            Button button9 = findViewById(R.id.button9);
+            button9.setEnabled(false);
         }
     }
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        TextView state1 = findViewById(R.id.button1);
+        String save1 = state1.getText().toString();
+        outState.putSerializable("button1", save1);
+        TextView state2 = findViewById(R.id.button2);
+        String save2 = state2.getText().toString();
+        outState.putSerializable("button2", save2);
+        TextView state3 = findViewById(R.id.button3);
+        String save3 = state3.getText().toString();
+        outState.putSerializable("button3", save3);
+        TextView state4 = findViewById(R.id.button4);
+        String save4 = state4.getText().toString();
+        outState.putSerializable("button4", save4);
+        TextView state5 = findViewById(R.id.button5);
+        String save5 = state5.getText().toString();
+        outState.putSerializable("button5", save5);
+        TextView state6 = findViewById(R.id.button6);
+        String save6 = state6.getText().toString();
+        outState.putSerializable("button6", save6);
+        TextView state7 = findViewById(R.id.button7);
+        String save7 = state7.getText().toString();
+        outState.putSerializable("button7", save7);
+        TextView state8 = findViewById(R.id.button8);
+        String save8 = state8.getText().toString();
+        outState.putSerializable("button8", save8);
+        TextView state9 = findViewById(R.id.button9);
+        String save9 = state9.getText().toString();
+        outState.putSerializable("button9", save9);
+
+        outState.putSerializable("gameState", game);
+    }
+
 }
