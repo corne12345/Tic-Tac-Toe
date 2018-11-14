@@ -1,5 +1,5 @@
 # Tic-Tac-Toe
-##Unit 2 from course Native App Studio
+## Unit 2 from course Native App Studio
 
 This app is an implementation of the board game tic-tac-toe.
 The game is played with 2 players, one playing with crosses and the other with circles.
@@ -15,6 +15,6 @@ _Figure 1: Screenshot of the game in landscape mode_
 
 _Figure 2: Screenshot of the game in portrait mode_
 
-##Disclaimer
+## Disclaimer
 This game is not yet finalised. There will be updates in both the code and layout.
 Some elements may even be added further along.
