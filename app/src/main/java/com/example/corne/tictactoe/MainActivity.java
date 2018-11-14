@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
             state_tile = (String) savedInstanceState.getSerializable("button9");
             text_tile = findViewById(R.id.button9);
             text_tile.setText(state_tile);
+            GameState check = game.won();
+            disableButtons(check);
         }
 
     }
@@ -113,9 +115,12 @@ public class MainActivity extends AppCompatActivity {
             case INVALID:
                 break;
         }
+
         GameState check = game.won();
-        
-        if (check == GameState.PLAYER_ONE || check == GameState.PLAYER_TWO){
+        disableButtons(check);
+    }
+    public void disableButtons(GameState check){
+        if (check == GameState.PLAYER_ONE || check == GameState.PLAYER_TWO || check == GameState.DRAW){
             Button button1 = findViewById(R.id.button1);
             button1.setEnabled(false);
             Button button2 = findViewById(R.id.button2);
@@ -136,6 +141,8 @@ public class MainActivity extends AppCompatActivity {
             button9.setEnabled(false);
         }
     }
+
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
