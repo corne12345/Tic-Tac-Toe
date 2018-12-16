@@ -4,87 +4,148 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@android:color/darker_gray"
+    android:orientation="horizontal"
     tools:context=".MainActivity">
 
     <android.support.v7.widget.GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:layout_weight="1"
+        android:layout_margin="8dp"
+        android:layout_weight="0"
+        android:background="@android:color/background_light"
         app:columnCount="3">
 
         <Button
             android:id="@+id/button0"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_margin="4dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/darker_gray"
             android:onClick="tileClicked"
+            android:padding="10dp"
             android:textSize="0sp" />
 
         <Button
             android:id="@+id/button1"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_margin="4dp"
+            android:layout_marginTop="0dp"
+            android:background="@android:color/darker_gray"
             android:onClick="tileClicked"
+            android:padding="10dp"
             android:textSize="0sp" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_margin="4dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="0dp"
+            android:background="@android:color/darker_gray"
             android:onClick="tileClicked"
+            android:padding="10dp"
             android:textSize="0sp" />
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_margin="4dp"
+            android:layout_marginLeft="0dp"
+            android:background="@android:color/darker_gray"
             android:onClick="tileClicked"
+            android:padding="10dp"
             android:textSize="0sp" />
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_margin="4dp"
+            android:background="@android:color/darker_gray"
             android:onClick="tileClicked"
             android:textSize="0sp" />
 
         <Button
             android:id="@+id/button5"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_margin="4dp"
+            android:layout_marginRight="0dp"
+            android:background="@android:color/darker_gray"
             android:onClick="tileClicked"
+            android:padding="10dp"
             android:textSize="0sp" />
 
         <Button
             android:id="@+id/button6"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_margin="4dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginBottom="0dp"
+            android:background="@android:color/darker_gray"
             android:onClick="tileClicked"
+            android:padding="10dp"
             android:textSize="0sp" />
 
         <Button
             android:id="@+id/button7"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_margin="4dp"
+            android:layout_marginBottom="0dp"
+            android:background="@android:color/darker_gray"
             android:onClick="tileClicked"
+            android:padding="10dp"
             android:textSize="0sp" />
 
         <Button
             android:id="@+id/button8"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_margin="4dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="0dp"
+            android:background="@android:color/darker_gray"
             android:onClick="tileClicked"
+            android:padding="10dp"
             android:textSize="0sp" />
     </android.support.v7.widget.GridLayout>
 
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:onClick="resetClicked"
-        android:text="Button" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/turnView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="TextView"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/button10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:layout_weight="0"
+            android:background="@android:color/background_light"
+            android:onClick="resetClicked"
+            android:text="Reset" />
+    </LinearLayout>
 
 </LinearLayout>
